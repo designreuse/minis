@@ -6,7 +6,7 @@ apply plugin: "war"
 
 dependencies {
 
-	compile project(":minis-core")
+	compile project(":minis-aa")
 	
     compile "javax.servlet:jstl:1.2"
 
