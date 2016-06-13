@@ -1,0 +1,148 @@
+@CHARSET "UTF-8";
+
+@IMPORT url("default-icons.css");
+
+@IMPORT url("default-override.css");
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.4em;
+  line-height: 1.8em;
+  height: 100%;
+}
+
+a {
+  color: #0879c0;
+  text-decoration: none;
+}
+
+a:active, a:hover {
+  outline: 0;
+}
+
+label {
+  padding: 4px 0px 2px;
+}
+
+@media ( min-width : 1024px) {
+  #body {
+    width: 960px;
+    margin: 5px auto;
+  }
+  #container {
+    width: 960px;
+  }
+  #navbar {
+  }
+  #content {
+  }
+}
+
+@media ( min-width : 1200px) {
+  #body {
+    width: 1100px;
+    margin: 5px auto;
+  }
+  #container {
+    width: 1100px;
+  }
+  #navbar {
+  }
+  #content {
+  }
+}
+
+@media ( min-width : 1366px) {
+  #body {
+    width: 1280px;
+    margin: 5px auto;
+  }
+  #container {
+    width: 1280px;
+  }
+  #navbar {
+  }
+  #content {
+  }
+}
+
+#body {
+  height: 100%;
+}
+
+#header {
+  height: 30px;
+}
+
+#footer {
+  height: 20px;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 10px 10px;
+}
+
+#container {
+  height: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+#navbar {
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  padding: 10px 5px;
+  box-sizing: content-box;
+}
+
+#content {
+  top: 0px;
+  left: 160px;
+  position: absolute;
+  padding: 10px 5px;
+  box-sizing: content-box;
+}
+
+#logo {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: bold;
+  color: #1984c8;
+  padding: 2px 10px;
+}
+
+.divider {
+  height: 1px;
+  background-color: #5db2ff;
+}
+
+.end-space {
+  padding-bottom: 10px;
+}
+
+.command-bar {
+  padding-bottom: 10px;
+}
+
+
+.img-button {
+  margin: 0;
+  display: inline-block;
+  padding: 2px 4px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  color: #515967;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #ceced2;
+  border-radius: 4px;
+  background-color: #f3f3f4;
+}

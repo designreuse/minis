@@ -1,0 +1,184 @@
+/* 
+ * The layout manager.
+ */
+@CHARSET "UTF-8";
+
+/* The flow layout styles.
+--------------------------------------------- */
+.flow-layout>* {
+	float: left;
+	margin-right: 5px;
+}
+
+.flow-layout>:last-child {
+	float: none;
+}
+
+.flow-layout>:last-child:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/* The border layout styles.
+--------------------------------------------- */
+.border-layout>* {
+	padding: 0px;
+	padding-bottom: 0px;
+}
+
+.border-layout .layout-north {
+	margin: 0px;
+}
+
+.border-layout .layout-south {
+	margin: 0px;
+}
+
+.border-layout .layout-east {
+	float: left;
+	margin: 0px;
+	margin-right: 5px;
+}
+
+.border-layout .layout-west {
+	float: right;
+	margin: 0px;
+	margin-left: 5px;
+}
+
+.border-layout .layout-center {
+	margin: 0px;
+	padding-bottom: 0px;
+}
+
+.border-layout .layout-center:after {
+	content: "";
+	clear: both;
+	display: block;
+	overflow: hidden;
+}
+
+/* The table layout styles.
+--------------------------------------------- */
+.table-layout {
+	display: table;
+	padding: 8px 0px;
+}
+
+.table-layout>* {
+	display: table-row;
+}
+
+.table-layout>*>* {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+/* the custom styles.
+--------------------------------------------- */
+.row {
+	margin: inherit;
+}
+
+@media ( min-width : 1200px) {
+	div[class^="row column-md-"] {
+		float: left;
+	}
+	.column-md-1 {
+		width: 8.3333%;
+	}
+	.column-md-2 {
+		width: 16.6666%;
+	}
+	.column-md-3 {
+		width: 24.9999%;
+	}
+	.column-md-4 {
+		width: 33.3332%;
+	}
+	.column-md-5 {
+		width: 41.6665%;
+	}
+	.column-md-6 {
+		width: 49.9998%;
+	}
+	.column-md-7 {
+		width: 58.3331%;
+	}
+	.column-md-8 {
+		width: 66.6664%;
+	}
+	.column-md-9 {
+		width: 74.9997%;
+	}
+	.column-md-10 {
+		width: 83.333%;
+	}
+	.column-md-11 {
+		width: 91.6663%;
+	}
+	.column-md-12 {
+		width: 99.9996%;
+	}
+	.width-md-1 {
+		width: 40px;
+		min-width: 40px;
+	}
+	.width-md-2 {
+		width: 80px;
+		min-width: 80px;
+	}
+	.width-md-3 {
+		width: 120px;
+		min-width: 120px;
+	}
+	.width-md-4 {
+		width: 160px;
+		min-width: 160px;
+	}
+	.width-md-5 {
+		width: 200px;
+		min-width: 200px;
+	}
+	.width-md-6 {
+		width: 240px;
+		min-width: 240px;
+	}
+	.width-md-7 {
+		width: 280px;
+		min-width: 280px;
+	}
+	.width-md-8 {
+		width: 320px;
+		min-width: 320px;
+	}
+	.width-md-9 {
+		width: 360px;
+		min-width: 360px;
+	}
+	.width-md-10 {
+		width: 400px;
+		min-width: 400px;
+	}
+	.width-md-11 {
+		width: 440px;
+		min-width: 440px;
+	}
+	.width-md-12 {
+		width: 480px;
+		min-width: 480px;
+	}
+	.width-40p {
+		width: 40% !important;
+		min-width: 40%;
+	}
+	.width-50p {
+		width: 50% !important;
+		min-width: 50%;
+	}
+	.width-60p {
+		width: 60% !important;
+		min-width: 60%;
+	}
+}

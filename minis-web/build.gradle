@@ -1,0 +1,31 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "spring-boot"
+apply plugin: "application"
+apply plugin: "war"
+
+dependencies {
+
+	compile project(":minis-core")
+	
+    compile "javax.servlet:jstl:1.2"
+
+    compile "commons-collections:commons-collections:3.2"
+
+    compile "com.google.code.gson:gson:2.5"
+    compile "com.google.guava:guava:18.0"
+
+    compile "joda-time:joda-time:2.9.1"
+    compile "org.sitemesh:sitemesh:3.0.1"
+
+    compile "org.springframework.boot:spring-boot-devtools:1.3.2.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-web:1.3.2.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-security:1.3.2.RELEASE"
+    compile "org.springframework.boot:spring-boot-starter-tomcat:1.3.2.RELEASE"
+    
+    testCompile "junit:junit:4.8.2"
+    testCompile "org.assertj:assertj-core:2.3.0"
+    testCompile "org.springframework.boot:spring-boot-starter-test:1.3.2.RELEASE"
+    
+    providedRuntime "org.apache.tomcat.embed:tomcat-embed-jasper:8.0.30"
+}

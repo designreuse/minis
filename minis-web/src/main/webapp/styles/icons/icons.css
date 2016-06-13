@@ -1,0 +1,43 @@
+﻿/* 
+ * the icon css style library
+ * 
+ * @author yen.
+ */
+
+[class^="img-"], *[class^="icon-"] {
+    display: inline-block;
+    margin-right: 5px; 
+    vertical-align: middle;
+    background-repeat: no-repeat; 
+}
+
+[class^="img-m-"], *[class^="icon-m-"] {
+    width: 32px;
+    height: 32px;
+}
+
+[class^="img-s-"], *[class^="icon-s-"] {
+    width: 16px;
+    height: 16px;
+}
+
+.img-m-new-doc {
+    background-image: url(images/32x32/new-doc.png);
+}
+
+.img-m-search {
+    background-image: url(images/32x32/search.png);
+}
+
+.img-s-add-fave {
+    background-image: url(images/16x16/add-fave.png);
+}
+
+.img-s-my-faves {
+    background-image: url(images/16x16/my-faves.png);
+}
+
+.img-s-search {
+    background-image: url(images/16x16/search.png);
+}
+

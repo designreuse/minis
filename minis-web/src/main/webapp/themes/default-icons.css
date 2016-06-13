@@ -1,0 +1,6 @@
+@CHARSET "UTF-8";
+
+.icon-attributes {
+	background-image: url('./icons/attributes.png');
+	border-color: transparent;
+}

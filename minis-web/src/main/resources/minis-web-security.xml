@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+    xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+    <security:http auto-config="false" use-expressions="true" authentication-manager-ref="authenticationManager">
+        <security:http-basic />
+        <security:intercept-url pattern="**" access="authenticated" />
+        <security:expression-handler ref="webExpressionHandler"/>
+    </security:http>
+
+    <security:authentication-manager alias="authenticationManager">
+
+        <!-- by Simple Basic Authentication -->
+        <security:authentication-provider>
+            <security:user-service id="simpleBasicUserDetailsService">
+                <security:user authorities="" name="administrator" password="1234" />
+            </security:user-service>
+        </security:authentication-provider>
+
+    </security:authentication-manager>
+
+    <bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+		<property name="permissionEvaluator" ref="customPermissionEvaluator" />
+	</bean>
+
+    <bean id="webExpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+    	<property name="permissionEvaluator" ref="customPermissionEvaluator" />
+	</bean>
+
+    <bean id="customPermissionEvaluator" class="net.minis.core.spring.security.PermissionEvaluatorImpl" />
+
+</beans>

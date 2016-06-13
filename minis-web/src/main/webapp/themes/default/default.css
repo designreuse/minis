@@ -1,0 +1,106 @@
+@CHARSET "UTF-8";
+
+@IMPORT url("default-boostrap.css");
+@IMPORT url("default-theme.css");
+@IMPORT url("default-layout.css");
+
+@media (min-width: 768px) {
+	.body {
+		width: 700px;
+	}
+}
+@media (min-width: 1024px) {
+	.body {
+		width: 900px;
+	}
+}
+@media (min-width: 1200px) {
+	.body {
+		width: 1024px;
+	}
+}
+@media (min-width: 1280px) {
+	.body {
+		width: 1200px;
+	}
+}
+@media (min-width: 1366px) {
+	.body {
+		width: 1280px;
+	}
+}
+
+.logo {
+	padding: 2px 10px;
+}
+
+.header {
+	height: 40px;
+	padding: 5px 10px 10px;
+}
+
+.footer {
+	padding: 5px 10px 10px;
+}
+
+.content {
+	padding: 5px 10px;
+}
+
+.content-pane {
+	padding: 5px 10px;
+}
+
+.navbar>* {
+	float: left;
+}
+
+.navbar>ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	-webkit-margin-before: 0px;
+	-webkit-margin-after: 0px;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+.navbar>ul>li {
+	float: left;
+	padding: 8px 0px 5px;
+}
+
+.navbar>ul>li>a {
+	padding: 5px 8px;
+}
+
+.navbar-right {
+	float: right !important;
+}
+
+
+
+.ui-content {
+    display: table;
+    height: 100%;
+}
+
+.ui-sidebar {
+    width: 200px;
+    height: 100%;
+    display: table-cell;
+    border-right: 1px solid #cccccc; 
+}
+
+.ui-sidebar>div {
+    padding: 5px 10px;
+}
+
+.center {
+	text-align: center;	
+}
+
+.space {
+	margin-left: 6px;
+}

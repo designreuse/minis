@@ -1,0 +1,154 @@
+@CHARSET "UTF-8";
+
+/*************************************************************************** 
+	Override boostrap css styles 
+****************************************************************************/
+
+body {
+	font-size: 13px;
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, 
+.col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10,
+.col-md-11, .col-md-12 {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+label {
+	padding-top: 6px;
+	padding-left: 4px;
+	padding-bottom: 2px;
+	display: inline-block;
+	margin-bottom: 2px;
+	font-weight: normal;
+}
+
+.form-label {
+}
+
+.form-control {
+	font-size: 13px;
+	padding: 4px 8px;
+	height: inherit;
+}
+
+.form-group {
+	margin-bottom: 4px;
+}
+
+.btn {
+	font-size: 13px;
+	padding: 4px 6px;
+}
+
+.btn-info,
+.btn-primary,
+.btn-success, 
+.btn-warning,
+.btn-danger {
+	padding: 4px 10px;
+}
+
+.bs-callout {
+	padding: 6px 10px 2px;
+	margin: 6px 8px;
+}
+
+.input-group {
+	margin-bottom: 2px;
+}
+
+.input-group-btn:last-child>.btn, 
+.input-group-btn:last-child>.btn-group {
+	margin-top: -1px;
+}
+
+.k-grid tbody .k-button {
+	padding: 2px 4px 2px;
+	min-width: inherit;
+	width: inherit;
+}
+
+.k-grid tbody .k-button .k-icon {
+	margin-left: 3px;
+	margin-right: 3px;
+}
+
+.k-grid tbody td>.k-grid-delete {
+	margin-top: inherit;
+	margin-bottom: inherit;
+}
+
+.k-grid tr td {
+    border-bottom: 1px solid #c5c5c5;
+}
+
+.modal-header {
+	padding: 8px 15px;
+	background-color: #f8f9f9;
+	border-radius: 6px 6px 0px 0px;
+}
+
+.control-container {
+	padding: 4px 4px;
+}
+
+.control-content {
+	padding: 2px 4px;
+	margin-right: 2px;
+	display: inline-block;
+	border: 1px solid;
+	border-radius: 4px;
+	border-color: #cccccc;
+	background-repeat: repeat-x;
+	background-image: -webkit-linear-gradient(top,#fff 0,#e0e0e0 100%);
+	background-image: -o-linear-gradient(top,#fff 0,#e0e0e0 100%);
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#e0e0e0));
+	background-image: linear-gradient(to bottom,#fff 0,#e0e0e0 100%);
+}
+
+/*************************************************************************** 
+	Custom Styles.  
+****************************************************************************/
+.drop-drag-box {
+	line-height: 1.42857143;
+  	background-color: #fff;
+  	border: 1px solid #ddd;
+  	border-radius: 4px;
+  	margin-bottom: 15px;
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+
+.width-sm-1 {
+	width: 4% !important;
+	min-width: 50px !important;
+}
+
+.width-sm-2 {
+	width: 8% !important;
+	min-width: 100px !important;
+}
+
+.width-sm-3 {
+	width: 12%;
+	min-width: 150px;
+}
+
+.width-sm-4 {
+	width: 16%;
+	min-width: 200px;
+}
+
+.width-sm-6 {
+	width: 24%;
+	min-width: 300px;
+}
+
+.width-sm-8 {
+	width: 20%;
+	min-width: 250px;
+}
+

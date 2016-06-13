@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:security="http://www.springframework.org/schema/security"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security
+		http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <!-- ================================================================================= -->
+    <!-- Spring Security Authentication Manager. -->
+
+    <security:authentication-manager alias="authenticationManager">
+    
+        <!-- Mock Authentication User Token. -->
+        <security:authentication-provider user-service-ref="userDetailsService" />
+
+    </security:authentication-manager>
+
+
+    <!-- ================================================================================= -->
+    <!-- Spring Security HTTP Filter Chain Settings. -->
+
+    <!-- Ignore Authentication Path. -->
+    <security:http pattern="/contents/**" security="none" />
+    <security:http pattern="/modules/**"  security="none" />
+    <security:http pattern="/scripts/**"  security="none" />
+    <security:http pattern="/styles/**"   security="none" />
+    <security:http pattern="/themes/**"   security="none" />
+    <security:http pattern="/json/**"     security="none" />
+
+    <security:http entry-point-ref="basicAuthEntryPoint" auto-config="true" use-expressions="true">
+        <security:intercept-url pattern="/**" access="authenticated" />
+        <security:custom-filter ref="basicAuthenticationFilter" after="BASIC_AUTH_FILTER" />
+    </security:http>
+
+    <bean id="authenticationSuccessHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/index" />
+    </bean>
+
+    <bean id="authenticationFailureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/loginFailure" />
+    </bean>
+
+    <bean id="logoutSuccessHandler" class="org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler">
+        <property name="defaultTargetUrl" value="/logoutSuccess" />
+    </bean>
+
+    <bean id="expressionHandler" class="org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler">
+        <property name="permissionEvaluator" ref="permissionEvaluator" />
+    </bean>
+
+    <bean id="webExpressionHandler" class="org.springframework.security.web.access.expression.DefaultWebSecurityExpressionHandler">
+        <property name="permissionEvaluator" ref="permissionEvaluator" />
+    </bean>
+
+    <bean id="permissionEvaluator" class="net.minis.api.spring.security.PermitAllPermissionEvaluator" />
+
+
+    <!-- ================================================================================= -->
+    <!-- The User Details Service Data Source. -->
+
+    <bean id="authenticationUserDetailsService" class="org.springframework.security.core.userdetails.UserDetailsByNameServiceWrapper">
+        <property name="userDetailsService" ref="userDetailsService" />
+    </bean>
+
+    <security:user-service id="userDetailsService">
+        <security:user name="yenchi" password="1234" authorities=""/>
+    </security:user-service>
+
+    <!-- ================================================================================= -->
+    <!-- Basic Authentication. -->
+
+    <bean id="basicAuthEntryPoint" class="org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint">
+        <property name="realmName" value="iData Authentication." />
+    </bean>
+
+    <bean id="basicAuthenticationFilter" class="org.springframework.security.web.authentication.www.BasicAuthenticationFilter">
+        <constructor-arg ref="authenticationManager" />
+        <constructor-arg ref="basicAuthEntryPoint"/>
+    </bean>
+
+    <!-- ================================================================================= -->
+
+    <bean id="mockedAuthenticationProvider" class="net.minis.api.spring.security.mocked.MockedAuthenticationProvider">
+        <property name="authenticationUserDetailsService" ref="authenticationUserDetailsService" />
+        <property name="mockedPrincipal" value="yenchi" />
+    </bean>
+
+</beans>
