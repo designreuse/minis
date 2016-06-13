@@ -1,2 +1,2 @@
 
-include "minis-api", "minis-core", "minis-web"
+include "minis-api", "minis-aa", "minis-web"
